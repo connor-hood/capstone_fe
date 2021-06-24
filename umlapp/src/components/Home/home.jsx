@@ -3,7 +3,7 @@ import './home.css'
 
 function Home() {
     return(
-        <div>
+        <div className="headwrap">
             <h2>This app is designed with the music enthusiasts in mind. Search any song below and find the music video and tablature side by side for all your favorite songs!</h2>
             <form>
             <label for="search"></label>
