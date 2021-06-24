@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar/navBar';
+import './app.css'
 
 class App extends Component {
     state = { }
