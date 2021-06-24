@@ -1,6 +1,10 @@
 .headwrap {
-    border: 1px;
+    border: 3px;
     border-style: solid;
+    padding: 30px;
+    margin-left: 175px;
+    padding-bottom: 400px;
+    margin-right: 30px;
 }
 
 form {

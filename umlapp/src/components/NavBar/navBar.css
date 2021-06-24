@@ -2,6 +2,9 @@ ul {
     list-style-type: none;
 }
 
-a {
-    color: #707070;
+.sidenav {
+    height: 100%;
+    width: 155px;
+    position: fixed;
+    left: 0;
 }
