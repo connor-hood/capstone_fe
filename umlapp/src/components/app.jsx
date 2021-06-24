@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import NavBar from './NavBar/navBar';
 
 class App extends Component {
     state = { }
     render() {
         return (
-            <h1>Using Components</h1>
+            <div>
+            <h1>Ultimate Music Lover</h1>
+            <NavBar />
+            </div>
         );
     }
 }
