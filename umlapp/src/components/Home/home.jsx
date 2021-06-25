@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Library from '../Library/mylibrary';
-import NewPlaylist from '../NewPlaylist/newPlaylist';
 import SongInfo from '../SongInfo/songInfo';
 import './home.css'
 

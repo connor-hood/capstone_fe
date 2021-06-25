@@ -1,16 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './navBar.css'
 
 function NavBar() {
     return (
         <div className="sidenav">
+            <Link to='/'>
             <p>Home</p>
+            </Link>
+            <Link to='/library'>
             <p>My Library</p>
+            </Link>
+            <Link to='/playlists'>
             <p>Saved Playlists</p>
+            </Link>
             <ul>
                 <li><a href="/" >Highest Rated</a></li>
                 <li><a href="/">Custom 1</a></li>
-                <li><a href="/">Create a new one</a></li>
+                <li><Link to='/create'>Create a new one</Link></li>
             </ul>
 
         </div>
