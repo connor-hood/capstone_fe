@@ -21,6 +21,7 @@ const Playlist = () => {
     }
     return (
         <div>
+            <h3></h3>
             <ReactBootstrap.Table striped bordered hover variant="dark">
             <thead>
                 <tr>
