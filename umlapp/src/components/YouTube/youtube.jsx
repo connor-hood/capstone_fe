@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-class Tab extends Component() {
-    super(props){}
+class YouTube extends Component() {
+    super(props){
+    }
    render() {
        return (
            <div>
-               <p>Tab Viewer</p>
+               <p>Video Viewer</p>
            </div>
        )
    }
 }
 
-export default Tab;
+export default YouTube;
