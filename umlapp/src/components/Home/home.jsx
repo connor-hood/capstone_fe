@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Library from '../Library/mylibrary';
+import NewPlaylist from '../NewPlaylist/newPlaylist';
 import './home.css'
 
 class Home extends Component {
@@ -14,6 +15,7 @@ class Home extends Component {
                         <br />
                         <button>Listen!</button>
                     </form>
+                <NewPlaylist />
                 <Library />
             </div>
         )
