@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SongInfo from '../SongInfo/songInfo';
 import Searchbar from '../Searchbar/searchbar';
 import './home.css'
 

@@ -13,7 +13,7 @@ class Searchbar extends React.Component {
     render() {
         return (
             <>
-            <h2 style={{textAlign:"center"}}>This app is designed with the music enthusiasts in mind.</h2>
+            <h1 style={{textAlign:"center"}}>This app is designed with the music enthusiast in mind.</h1>
             <h5 style={{textAlign:"center"}}>Search any song below and find the music video and tablature side by side for all your favorite songs!</h5>
             <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!</h5>
             <h5 style={{textAlign:"center"}}>OR</h5>
