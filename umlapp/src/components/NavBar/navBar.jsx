@@ -8,8 +8,8 @@ function NavBar() {
             <Link to='/'>
             <p>Home</p>
             </Link>
-            <Link to='/library'>
-            <p>My Library</p>
+            <Link to='/favorites'>
+            <p>My Favorites</p>
             </Link>
             <Link to='/playlists'>
             <p>Saved Playlists</p>
