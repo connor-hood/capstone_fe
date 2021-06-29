@@ -9,7 +9,15 @@ import NewPlaylist from './NewPlaylist/newPlaylist';
 import './app.css';
 
 class App extends Component {
-    state = { }
+    constructor(){
+        super();
+        this.state = {
+            
+        }
+    }
+    state = {
+
+    }
     render() {
         return (
             <div>
