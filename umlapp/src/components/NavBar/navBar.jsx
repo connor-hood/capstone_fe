@@ -15,8 +15,8 @@ function NavBar() {
             <p>Saved Playlists</p>
             </Link>
             <ul>
-                <li><a href="/" >Highest Rated</a></li>
-                <li><a href="/">Custom 1</a></li>
+                <li><Link to="/" style={{textDecoration: 'inherit', color: '#707070'}}>Highest Rated</Link></li>
+                <li><Link to="/" style={{textDecoration: 'inherit', color: '#707070'}}>Custom 1</Link></li>
                 <li><Link to='/create' style={{textDecoration: 'inherit', color: '#707070'}}>Create a new one</Link></li>
             </ul>
 
