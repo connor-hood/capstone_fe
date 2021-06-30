@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import youtube from '../apis/youtube';
 import { Switch, Route } from 'react-router-dom';
 import NavBar from './NavBar/navBar';
 import Home from './Home/home';
@@ -21,7 +22,13 @@ class App extends Component {
         }
     }
     
-    
+    handleSubmit = async (termFromSearchBar) => {
+        const ytresponse = await youtube.get('/search', {
+            params: {
+                q: termFromSearchBar
+            }
+        })
+    }
     
     
     
@@ -32,7 +39,7 @@ class App extends Component {
             <NavBar />
             {/* <VideoItem /> */}
             <Switch>
-                <Route path="/" component={App} />
+                <Route path="/" component={Home} />
                 <Route path="/library" component={Library} />
                 <Route path="/playlists" component={Playlist} />
                 <Route path="/favorites" component={Favorites} />
