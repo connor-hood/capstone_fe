@@ -12,7 +12,10 @@ class App extends Component {
     constructor(){
         super();
         this.state = {
-            
+            selectedVideo: null,
+            selectedTab: null,
+            favorites: [],
+            playlist: []
         }
     }
     state = {
