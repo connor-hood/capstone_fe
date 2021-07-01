@@ -18,8 +18,11 @@ class App extends Component {
             selectedVideo: null,
             selectedTab: null,
             favorites: [],
-            playlist: []
+            playlist: [],
         }
+    }
+    componentDidMount() {
+        console.log("hello")
     }
     
     handleSubmit = async (termFromSearchBar) => {
@@ -28,6 +31,9 @@ class App extends Component {
                 q: termFromSearchBar
             }
         })
+        this.setState({
+            selectedVideo: ytresponse
+        });
     }
     
     
@@ -45,7 +51,7 @@ class App extends Component {
                 <Route path="/favorites" component={Favorites} />
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
-            <Searchbar handleFormSubmit={this.handleSubmit}/>
+            <Searchbar handleSubmit={this.handleSubmit}/>
             </div>
         );
     }
