@@ -1,15 +1,32 @@
-import React from 'react';
+import axios from 'axios';
+import React, { Component } from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import '../app.css'
 
-const Playlist = () => {
-    const songs = [
-        {title: "", artist: "", album: "", rating: ""},
-        {title: "", artist: "", album: "", rating: ""},
-        {title: "", artist: "", album: "", rating: ""}
-    ]
+class Playlist extends Component {
+    constructor(){
+        super();
+        this.state = {
+         songs:[]
+    }
+    }
 
-    const renderSong = (song, index) => {
+    
+    componentDidMount(){
+        console.log("Hello from playlist")
+        this.makeGetRequest();
+    };
+
+    async makeGetRequest() {
+        try{
+            let response = await axios.get('http://127.0.0.1:8000/songs/');
+            console.log(response.data)
+        }
+        catch (ex) {
+            console.log('Error in call')
+        }
+    }
+    renderSong = (song, index) => {
         return(
             <tr key={index}>
                 <td>{song.title}</td>
@@ -19,6 +36,7 @@ const Playlist = () => {
             </tr>
         )
     }
+    render(){
     return (
         <div>
             <ReactBootstrap.Table striped bordered hover variant="dark">
@@ -31,11 +49,11 @@ const Playlist = () => {
                 </tr>
             </thead>
             <tbody>
-                {songs.map(renderSong)}
+                
             </tbody>
             </ReactBootstrap.Table>
         </div>
-    )
+    )}
 }
 
 export default Playlist;

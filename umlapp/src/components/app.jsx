@@ -51,6 +51,7 @@ class App extends Component {
                 <Route path="/favorites" component={Favorites} />
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
+            <Playlist />
             <Searchbar handleSubmit={this.handleSubmit}/>
             </div>
         );
