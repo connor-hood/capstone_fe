@@ -7,6 +7,7 @@ import Library from './Library/mylibrary';
 import Playlist from './Playlist/playlist';
 import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
+import SongInfo from './SongInfo/songInfo';
 import Searchbar from './Searchbar/searchbar';
 import VideoItem from './YouTube/youtube';
 import './app.css';
@@ -51,8 +52,7 @@ class App extends Component {
                 <Route path="/favorites" component={Favorites} />
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
-            <Playlist />
-            <Searchbar handleSubmit={this.handleSubmit}/>
+            <SongInfo />
             </div>
         );
     }

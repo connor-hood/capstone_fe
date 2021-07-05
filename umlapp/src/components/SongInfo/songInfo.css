@@ -1,9 +1,10 @@
 .songInfo {
     border: 2px;
     border-style: solid;
+    padding-left: 50px;
 }
 
 .vtwrapper{
     border: 1px;
-    border-style: dashed;
+    border-style: dashed;   
 }
