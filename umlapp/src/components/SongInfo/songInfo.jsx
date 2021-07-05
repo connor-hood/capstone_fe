@@ -4,7 +4,9 @@ import Tab from '../Tab/tab';
 import './songInfo.css'
 
 
-const SongInfo = () => {
+const SongInfo = (props) => {
+
+    
     return(
         <div>
             <div className="songInfo">

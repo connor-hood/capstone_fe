@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import songsterr from '../../apis/songsterr';
 
 
 class Tab extends Component {
-    state = { 
-        selectedSong: '',
-     }
+    
     componentDidMount() {
         console.log("hello from tab")    
     }
@@ -16,6 +13,7 @@ class Tab extends Component {
                 s: termFromSearch
             }
         })
+        console.log(response.data)
         this.setState = ({
             selectedSong: response.data
         })
@@ -24,7 +22,7 @@ class Tab extends Component {
         return (
             <div>
                 <h3>Tab viewer</h3>
-                <h4>{this.state.selectedSong}</h4>
+                
             </div>
          );
     }

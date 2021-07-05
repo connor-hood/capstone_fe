@@ -9,8 +9,8 @@ import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
 import SongInfo from './SongInfo/songInfo';
 import Searchbar from './Searchbar/searchbar';
-import VideoItem from './YouTube/youtube';
 import './app.css';
+import songsterr from '../apis/songsterr';
 
 class App extends Component {
     constructor(){
@@ -32,8 +32,14 @@ class App extends Component {
                 q: termFromSearchBar
             }
         })
+        const sresponse = await songsterr.get('/', {
+            params: {
+                
+            }
+        })
         this.setState({
-            selectedVideo: ytresponse
+            selectedVideo: ytresponse,
+            selectedTab: sresponse
         });
     }
     
