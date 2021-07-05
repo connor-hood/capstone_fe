@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import youtube from '../apis/youtube';
 import { Switch, Route } from 'react-router-dom';
+import youtube from '../apis/youtube';
+import songsterr from '../apis/songsterr';
 import NavBar from './NavBar/navBar';
 import Home from './Home/home';
 import Library from './Library/mylibrary';
@@ -10,7 +11,6 @@ import NewPlaylist from './NewPlaylist/newPlaylist';
 import SongInfo from './SongInfo/songInfo';
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
-import songsterr from '../apis/songsterr';
 
 class App extends Component {
     constructor(){
@@ -22,11 +22,10 @@ class App extends Component {
             playlist: [],
         }
     }
-    componentDidMount() {
-        console.log("hello")
-    }
+    
     
     handleSubmit = async (termFromSearchBar) => {
+        this.preventDefualt()
         const ytresponse = await youtube.get('/search', {
             params: {
                 q: termFromSearchBar
@@ -60,8 +59,9 @@ class App extends Component {
                 <Route path="/favorites" component={Favorites} />
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
-            <Searchbar />
+            <Searchbar onSubmit={this.handleSubmit}/>
             <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
+            <Playlist songs={this.state.playlist}/>
             </div>
         );
     }

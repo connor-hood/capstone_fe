@@ -10,8 +10,6 @@ class Playlist extends Component {
          songs:[]
     }
     }
-
-    
     componentDidMount(){
         console.log("Hello from playlist")
         this.makeGetRequest();
@@ -21,20 +19,13 @@ class Playlist extends Component {
         try{
             let response = await axios.get('http://127.0.0.1:8000/songs/');
             console.log(response.data)
+            this.setState({
+                songs: response.data
+            })
         }
         catch (ex) {
             console.log('Error in call')
         }
-    }
-    renderSong = (song, index) => {
-        return(
-            <tr key={index}>
-                <td>{song.title}</td>
-                <td>{song.artist}</td>
-                <td>{song.album}</td>
-                <td>{song.rating}</td>
-            </tr>
-        )
     }
     render(){
     return (
@@ -49,7 +40,17 @@ class Playlist extends Component {
                 </tr>
             </thead>
             <tbody>
-                
+                    {this.state.songs.map(song => {
+                        return(
+                            <tr key={song.id}>
+                                <td>{song.id}</td>
+                                <td>{song.title}</td>
+                                <td>{song.artist}</td>
+                                <td>{song.album}</td>
+                                <td>{song.ranking}</td>
+                            </tr>
+                        )
+                    })}
             </tbody>
             </ReactBootstrap.Table>
         </div>
