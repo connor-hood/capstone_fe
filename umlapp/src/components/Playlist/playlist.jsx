@@ -33,6 +33,7 @@ class Playlist extends Component {
             <ReactBootstrap.Table striped bordered hover variant="dark">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Title</th>
                     <th>Artist</th>
                     <th>Album</th>
