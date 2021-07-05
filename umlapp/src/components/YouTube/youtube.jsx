@@ -3,10 +3,9 @@ import React, {  } from 'react';
 const VideoDetail = ({ video }) => {
   if (!video) {
     return <div>
-       <h1>Hello World</h1>
-       <br></br>
-       <p style={{fontSize:'25px'}}>Search and select any video
-       </p>
+       
+       <h3>Video viewer</h3>
+       
     </div>;
   }
 

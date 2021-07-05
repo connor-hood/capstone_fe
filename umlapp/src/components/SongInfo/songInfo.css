@@ -18,3 +18,9 @@
     border: 2px;
     border-style: double;
 }
+
+.playlib{
+    text-align: right;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+}

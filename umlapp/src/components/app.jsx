@@ -14,7 +14,7 @@ import songsterr from '../apis/songsterr';
 
 class App extends Component {
     constructor(){
-        super();
+        super()
         this.state = {
             selectedVideo: null,
             selectedTab: null,
@@ -32,9 +32,10 @@ class App extends Component {
                 q: termFromSearchBar
             }
         })
+        console.log(ytresponse)
         const sresponse = await songsterr.get('/', {
             params: {
-                
+                s: termFromSearchBar
             }
         })
         this.setState({
@@ -49,6 +50,7 @@ class App extends Component {
         return (
             <div>
             <h1>Ultimate Music Lover</h1>
+            
             <NavBar />
             {/* <VideoItem /> */}
             <Switch>
@@ -59,7 +61,7 @@ class App extends Component {
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
             <Searchbar />
-            <SongInfo />
+            <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
             </div>
         );
     }

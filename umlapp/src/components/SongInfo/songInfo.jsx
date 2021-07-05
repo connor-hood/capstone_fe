@@ -4,9 +4,12 @@ import Tab from '../Tab/tab';
 import './songInfo.css'
 
 
-const SongInfo = (props) => {
+class SongInfo extends React.Component{
+    state = {
+        rating: 0,
+    }
 
-    
+    render() {
     return(
         <div>
             <div className="songInfo">
@@ -15,7 +18,11 @@ const SongInfo = (props) => {
                 <h2>Album</h2>
                 <h2 style={{textAlign: 'right' }}>Artwork</h2>   
             </div>
-            <br />
+            <div className="playlib">
+                <p style={{float: 'left'}}>Add to Library</p>
+                <p stlye={{float: 'right'}}>Add to Playlist</p>
+            </div>
+            
             <div className="vtwrapper">
                 <div className="container">
                     <div className="row">
@@ -23,7 +30,7 @@ const SongInfo = (props) => {
                         <span>
                             <h4>Video:</h4>
                             <div className="video">
-                            <YouTube />
+                            <YouTube ytSearchTerm={this.props.video}/>
                             </div>
                         </span>
                         </div>
@@ -42,5 +49,5 @@ const SongInfo = (props) => {
         </div>
     )
 }
-
+}
 export default SongInfo;
