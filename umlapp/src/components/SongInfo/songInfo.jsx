@@ -20,13 +20,17 @@ const SongInfo = () => {
                         <div className="col-6">
                         <span>
                             <h4>Video:</h4>
+                            <div className="video">
                             <YouTube />
+                            </div>
                         </span>
                         </div>
                         <div className="col-6">
-                        <span>
+                        <span >
                             <h4>Tab:</h4>
+                            <div className="tab">
                             <Tab />
+                            </div>
                         </span>
                         </div>
                     </div>

@@ -8,7 +8,9 @@ class Searchbar extends React.Component {
     };
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.handleSubmit(this.state.term);
+        this.setState({
+            term: event
+        })
     }
     render() {
         return (
@@ -24,7 +26,7 @@ class Searchbar extends React.Component {
                         <label htmlFor="video-search"></label>
                         <br />
                         <input onChange={this.handleChange} name='video-search' type="text" placeholder="Search any song..."/>
-                        <button type= "submit">Search</button>
+                        <button type="submit">Search</button>
                     </div>
                 </form>
             </div>

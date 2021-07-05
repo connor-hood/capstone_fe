@@ -8,8 +8,17 @@ class Tab extends Component {
         selectedSong: '',
      }
     componentDidMount() {
-        console.log("hello from tab")
-        
+        console.log("hello from tab")    
+    }
+    handleSubmit = async (termFromSearch) => {
+        let response = await songsterr.get({
+            params: {
+                s: termFromSearch
+            }
+        })
+        this.setState = ({
+            selectedSong: response.data
+        })
     }
     render() { 
         return (

@@ -52,6 +52,7 @@ class App extends Component {
                 <Route path="/favorites" component={Favorites} />
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
+            <Searchbar />
             <SongInfo />
             </div>
         );

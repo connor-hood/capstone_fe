@@ -8,3 +8,13 @@
     border: 1px;
     border-style: dashed;   
 }
+
+.video{
+    border: 2px;
+    border-style: double;
+}
+
+.tab{
+    border: 2px;
+    border-style: double;
+}
