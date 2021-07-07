@@ -62,6 +62,7 @@ class App extends Component {
             <Searchbar onSubmit={this.handleSubmit}/>
             <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
             <Playlist songs={this.state.playlist}/>
+            
             </div>
         );
     }
