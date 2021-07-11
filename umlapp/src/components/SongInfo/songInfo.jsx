@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import YouTube from '../YouTube/youtube';
 import Tab from '../Tab/tab';
 import './songInfo.css'
 
 
-class SongInfo extends React.Component{
+class SongInfo extends Component{
     state = {
         rating: 0,
     }

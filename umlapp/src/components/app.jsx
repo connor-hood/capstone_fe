@@ -8,9 +8,10 @@ import Library from './Library/mylibrary';
 import Playlist from './Playlist/playlist';
 import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
-import SongInfo from './SongInfo/songInfo';
+
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
+import SongInfo from './SongInfo/songInfo';
 
 class App extends Component {
     constructor(){
@@ -60,8 +61,8 @@ class App extends Component {
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
             <Searchbar onSubmit={this.handleSubmit}/>
-            <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
-            <Playlist songs={this.state.playlist}/>
+            
+            <SongInfo />
             
             </div>
         );
