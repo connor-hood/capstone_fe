@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoDetail from '../YouTube/youtube';
+import VideoDetail from '../VideoDetail/videoDetail';
 
 
 
