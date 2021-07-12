@@ -1,12 +1,19 @@
 import React from 'react';
 
 class Searchbar extends React.Component {
+    state = {
+        term: 'Default Text'
+    };
+
     handleChange = (event) => {
         this.setState({
             term: event.target.value
         });
     };
-    
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.handleFormSubmit(this.state.term);
+    }
     render() {
         return (
             <>
@@ -18,9 +25,13 @@ class Searchbar extends React.Component {
             <div className='search-bar ui segment'>
                 <form onSubmit={this.props.handleSubmit} className='ui form'>
                     <div className='field'>
-                        <label htmlFor="video-search"></label>
+                        <label htmlFor="video-search">Search</label>
                         <br />
-                        <input onChange={this.handleChange} name='video-search' type="text" placeholder="Search any song..."/>
+                        <input onChange={this.handleChange} 
+                        name='video-search' 
+                        type="text" 
+                        placeholder="Search any song..."
+                        value={this.state.term}/>
                         <button type="submit">Search</button>
                     </div>
                 </form>

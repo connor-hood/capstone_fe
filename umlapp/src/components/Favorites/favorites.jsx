@@ -17,11 +17,11 @@ class Favorites extends Component {
 
     async getFavorites() {
         try{
-            let response = await axios.get('http://127.0.0.1:8000/users/1/favorites');
-            console.log(response.data.filter('song'))
-            /* this.setState({
-                favorites: response.data.filter('song')
-            }) */
+            let response = await axios.get('http://127.0.0.1:8000/users/1/favorites/');
+            console.log(response.data)
+            this.setState({
+                favorites: response.data
+            })
         }
         catch (ex) {
             console.log('Error in call')
