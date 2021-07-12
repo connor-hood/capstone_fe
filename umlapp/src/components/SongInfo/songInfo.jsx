@@ -15,6 +15,8 @@ class SongInfo extends Component{
             <div className="songInfo">
                 <h2>Title</h2>
                 <h2>Artist</h2>
+                <h2>Album</h2>
+                <h2 style={{textAlign: 'right' }}>Artwork</h2>   
             </div>
             <div className="playlib">
                 <p style={{float: 'left'}}>Add to Library</p>

@@ -8,11 +8,9 @@ import Library from './Library/mylibrary';
 import Playlist from './Playlist/playlist';
 import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
-import VideoDetail from './YouTube/youtube';
-import VideoList from './VideoList/videoList';
+
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
-import SongInfo from './SongInfo/songInfo';
 
 class App extends Component {
     constructor(){
@@ -22,7 +20,6 @@ class App extends Component {
             selectedTab: null,
             favorites: [],
             playlist: [],
-            videos: [],
         }
     }
     
@@ -35,41 +32,36 @@ class App extends Component {
             }
         })
         console.log(ytresponse)
-       /*  const sresponse = await songsterr.get('/', {
+        const sresponse = await songsterr.get('/', {
             params: {
                 s: termFromSearchBar
             }
-        }) */
-        this.setState({
-            videos: ytresponse.data.items
-            //selectedTab: sresponse
         })
-    };
-    handleVideoSelect = (video) => {
         this.setState({
-            selectedVideo: video
-        })
+            selectedVideo: ytresponse,
+            selectedTab: sresponse
+        });
     }
+    
     
     
     render() {
         return (
-            <div className="ui container" style={{marginTop: '1em'}}>
+            <div>
             <h1>Ultimate Music Lover</h1>
-            <Searchbar handleFormSubmit={this.handleSubmit}/>
-            <div className='ui grid'>
-                <div className="ui row">
-                    <div className="eleven wide column">
-                        <VideoDetail video={this.state.selectedVideo}/>
-                    </div>
-                    <div className="five wide column">
-                        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-                    </div>
-                </div>
-            </div>
             
-           
-            
+            <NavBar />
+            {/* <VideoItem /> */}
+            <Switch>
+                <Route path="/" component={Home} />
+                <Route path="/library" component={Library} />
+                <Route path="/playlists" component={Playlist} />
+                <Route path="/favorites" component={Favorites} />
+                <Route path="/create" component={NewPlaylist} />
+            </Switch>
+            <Searchbar onSubmit={this.handleSubmit}/>
+            <Favorites />
+            <Playlist />
             </div>
         );
     }

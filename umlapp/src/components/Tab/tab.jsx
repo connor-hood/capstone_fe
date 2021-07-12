@@ -22,7 +22,7 @@ class Tab extends Component {
         return (
             <div>
                 <h3>Tab viewer</h3>
-                <p></p>
+                
             </div>
          );
     }
