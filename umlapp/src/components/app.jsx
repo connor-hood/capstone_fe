@@ -11,7 +11,6 @@ import NewPlaylist from './NewPlaylist/newPlaylist';
 
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
-import SongInfo from './SongInfo/songInfo';
 
 class App extends Component {
     constructor(){
@@ -62,7 +61,6 @@ class App extends Component {
             </Switch>
             <Searchbar onSubmit={this.handleSubmit}/>
             
-            <SongInfo />
             
             </div>
         );
