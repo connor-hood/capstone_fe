@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {Component}from 'react';
 
-class Searchbar extends React.Component {
+class Searchbar extends Component {
     handleChange = (event) => {
         this.setState({
             term: event.target.value
         });
     };
-    
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.handleFormSubmit(this.state.term);
+    }
     render() {
         return (
             <>
@@ -16,7 +19,7 @@ class Searchbar extends React.Component {
             <h5 style={{textAlign:"center"}}>OR</h5>
             <h5 style={{textAlign:"center"}}>Make a custom playlist!</h5>
             <div className='search-bar ui segment'>
-                <form onSubmit={this.props.handleSubmit} className='ui form'>
+                <form onSubmit={this.handleSubmit} className='ui form'>
                     <div className='field'>
                         <label htmlFor="video-search"></label>
                         <br />

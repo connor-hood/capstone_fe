@@ -11,6 +11,8 @@ import NewPlaylist from './NewPlaylist/newPlaylist';
 
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
+import VideoDetail from './YouTube/youtube';
+import VideoList from './VideoList/videoList';
 
 class App extends Component {
     constructor(){
@@ -20,12 +22,12 @@ class App extends Component {
             selectedTab: null,
             favorites: [],
             playlist: [],
+            videos: [],
         }
     }
     
     
     handleSubmit = async (termFromSearchBar) => {
-        this.preventDefualt()
         const ytresponse = await youtube.get('/search', {
             params: {
                 q: termFromSearchBar
@@ -42,7 +44,9 @@ class App extends Component {
             selectedTab: sresponse
         });
     }
-    
+    handleVideoSelect = (video) => {
+        this.setState({selectedVideo: video})
+    }
     
     
     render() {
@@ -59,9 +63,10 @@ class App extends Component {
                 <Route path="/favorites" component={Favorites} />
                 <Route path="/create" component={NewPlaylist} />
             </Switch>
-            <Searchbar onSubmit={this.handleSubmit}/>
-            <Favorites />
-            <Playlist />
+            <Searchbar handleFormSubmit={this.handleSubmit}/>
+            <VideoDetail video={this.state.selectedVideo}/>
+            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+            
             </div>
         );
     }
