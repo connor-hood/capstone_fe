@@ -11,6 +11,8 @@ import NewPlaylist from './NewPlaylist/newPlaylist';
 
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
+import VideoDetail from './VideoDetail/videoDetail';
+import VideoList from './VideoList/videoList';
 
 class App extends Component {
     constructor(){
@@ -20,29 +22,31 @@ class App extends Component {
             selectedTab: null,
             favorites: [],
             playlist: [],
+            videos: [],
         }
     }
     
     
     handleSubmit = async (termFromSearchBar) => {
-        this.preventDefualt()
         const ytresponse = await youtube.get('/search', {
             params: {
                 q: termFromSearchBar
             }
         })
         console.log(ytresponse)
-        const sresponse = await songsterr.get('/', {
+        /* const sresponse = await songsterr.get('/', {
             params: {
                 s: termFromSearchBar
             }
-        })
+        }) */
         this.setState({
-            selectedVideo: ytresponse,
-            selectedTab: sresponse
+            videos: ytresponse.data.items,
+            //selectedTab: sresponse
         });
     }
-    
+    handleVideoSelect = (video) => {
+        this.setState({selectedVideo: video})
+    }
     
     
     render() {
@@ -53,7 +57,7 @@ class App extends Component {
             <NavBar />
             {/* <VideoItem /> */}
             <Switch>
-                <Route path="/" component={Home} />
+                <Route path="/" component={App} />
                 <Route path="/library" component={Library} />
                 <Route path="/playlists" component={Playlist} />
                 <Route path="/favorites" component={Favorites} />
