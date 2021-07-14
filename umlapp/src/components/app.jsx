@@ -27,7 +27,7 @@ class App extends Component {
     }
     
     
-    handleSubmit = async (termFromSearchBar) => {
+    /* handleSubmit = async (termFromSearchBar) => {
         const ytresponse = await youtube.get('/search', {
             params: {
                 q: termFromSearchBar
@@ -38,16 +38,17 @@ class App extends Component {
             params: {
                 s: termFromSearchBar
             }
-        }) */
-        this.setState({
-            videos: ytresponse.data.items,
-            //selectedTab: sresponse
-        });
-    }
-    handleVideoSelect = (video) => {
-        this.setState({selectedVideo: video})
-    }
-    
+            this.setState({
+                videos: ytresponse.data.items,
+                //selectedTab: sresponse
+            });
+        }
+        
+        handleVideoSelect = (video) => {
+            this.setState({selectedVideo: video})
+        }
+        
+    }) */
     
     render() {
         return (
@@ -55,16 +56,7 @@ class App extends Component {
             <h1>Ultimate Music Lover</h1>
             
             <NavBar />
-            {/* <VideoItem /> */}
-            <Switch>
-                <Route path="/" component={App} />
-                <Route path="/library" component={Library} />
-                <Route path="/playlists" component={Playlist} />
-                <Route path="/favorites" component={Favorites} />
-                <Route path="/create" component={NewPlaylist} />
-            </Switch>
-            <Searchbar onSubmit={this.handleSubmit}/>
-            
+            <Searchbar />
             
             </div>
         );

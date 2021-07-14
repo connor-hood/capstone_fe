@@ -12,10 +12,10 @@ class Playlist extends Component {
     }
     componentDidMount(){
         console.log("Hello from playlist")
-        this.makeGetRequest();
+        //this.makeGetRequest();
     };
 
-    async makeGetRequest() {
+    /* async makeGetRequest() {
         try{
             let response = await axios.get('http://127.0.0.1:8000/songs/');
             console.log(response.data)
@@ -26,7 +26,7 @@ class Playlist extends Component {
         catch (ex) {
             console.log('Error in call')
         }
-    }
+    } */
     render(){
     return (
         <div>
