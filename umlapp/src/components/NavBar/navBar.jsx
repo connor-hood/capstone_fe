@@ -8,7 +8,7 @@ function NavBar() {
             <Link to='/' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
             <p>Home</p>
             </Link>
-            <Link to='/favorites' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
+            <Link to='/users/1/favorites' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
             <p>My Favorites</p>
             </Link>
             <Link to='/playlists' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>

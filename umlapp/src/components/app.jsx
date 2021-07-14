@@ -8,7 +8,7 @@ import Library from './Library/mylibrary';
 import Playlist from './Playlist/playlist';
 import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
-
+import SongInfo from './SongInfo/songInfo';
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
 import VideoDetail from './VideoDetail/videoDetail';
@@ -26,6 +26,9 @@ class App extends Component {
         }
     }
     
+    handleOnClick = () => {
+        console.log("Hello, is this")
+    }
     
     /* handleSubmit = async (termFromSearchBar) => {
         const ytresponse = await youtube.get('/search', {
@@ -56,7 +59,14 @@ class App extends Component {
             <h1>Ultimate Music Lover</h1>
             
             <NavBar />
+            <Switch>
+                <Route path="/" component={Home} />
+                <Route path="/users/1/favorites" component={Favorites}/>
+                    <Favorites
+                    favorites={this.state.favorites} />
+            </Switch>
             <Searchbar />
+            
             
             </div>
         );

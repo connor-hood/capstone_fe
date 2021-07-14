@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import YouTube from '../YouTube/youtube';
+import VideoDetail from '../VideoDetail/videoDetail';
 import Tab from '../Tab/tab';
 import './songInfo.css'
 
@@ -15,8 +15,6 @@ class SongInfo extends Component{
             <div className="songInfo">
                 <h2>Title</h2>
                 <h2>Artist</h2>
-                <h2>Album</h2>
-                <h2 style={{textAlign: 'right' }}>Artwork</h2>   
             </div>
             <div className="playlib">
                 <p style={{float: 'left'}}>Add to Library</p>
@@ -30,7 +28,7 @@ class SongInfo extends Component{
                         <span>
                             <h4>Video:</h4>
                             <div className="video">
-                            <YouTube ytSearchTerm={this.props.video}/>
+                            <VideoDetail />
                             </div>
                         </span>
                         </div>
