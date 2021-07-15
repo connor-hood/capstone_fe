@@ -30,6 +30,7 @@ class Playlist extends Component {
     render(){
     return (
         <div>
+            <h1>Hello from Playlist</h1>
             <ReactBootstrap.Table striped bordered hover variant="dark">
             <thead>
                 <tr>

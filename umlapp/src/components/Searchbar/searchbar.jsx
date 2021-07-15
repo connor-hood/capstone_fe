@@ -13,11 +13,6 @@ class Searchbar extends Component {
     render() {
         return (
             <>
-            <h1 style={{textAlign:"center"}}>This app is designed with the music enthusiast in mind.</h1>
-            <h5 style={{textAlign:"center"}}>Search any song below and find the music video and tablature side by side for all your favorite songs!</h5>
-            <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!</h5>
-            <h5 style={{textAlign:"center"}}>OR</h5>
-            <h5 style={{textAlign:"center"}}>Make a custom playlist!</h5>
             <div className='search-bar ui segment'>
                 <form onSubmit={this.handleSubmit} className='ui form'>
                     <div className='field'>

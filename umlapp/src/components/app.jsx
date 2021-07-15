@@ -10,6 +10,7 @@ import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
 import SongInfo from './SongInfo/songInfo';
 import Searchbar from './Searchbar/searchbar';
+
 import './app.css';
 import VideoDetail from './VideoDetail/videoDetail';
 import VideoList from './VideoList/videoList';
@@ -26,33 +27,27 @@ class App extends Component {
         }
     }
     
-    handleOnClick = () => {
-        console.log("Hello, is this")
+    componentDidMount(){
+        this.onFormSubmit('Configure passwordless sudo for user');
     }
-    
-    /* handleSubmit = async (termFromSearchBar) => {
-        const ytresponse = await youtube.get('/search', {
+
+    onFormSubmit = async (term) => {
+        const res = await youtube.get('/search',{
             params: {
-                q: termFromSearchBar
+                q: term
             }
         })
-        console.log(ytresponse)
-        /* const sresponse = await songsterr.get('/', {
-            params: {
-                s: termFromSearchBar
-            }
-            this.setState({
-                videos: ytresponse.data.items,
-                //selectedTab: sresponse
-            });
-        }
-        
-        handleVideoSelect = (video) => {
-            this.setState({selectedVideo: video})
-        }
-        
-    }) */
-    
+        this.setState({
+            video: res.data.items,
+            selectedVideo: res.data.items[0],
+        });
+    }
+
+    onVideoSelect = (video) => {
+        this.setState({
+            selectedVideo: video
+        });
+    }
     render() {
         return (
             <div>
@@ -60,15 +55,34 @@ class App extends Component {
             <Router>
             <NavBar />
             <Switch>
-                <Route path="/" component={Home} />
-                <Route exact path="/users/1/favorites" component={Favorites}/>
+                <Route path="/"  />
+                <Route exact path="/favorites" component={Favorites}/>
                     <Favorites
                     favorites={this.state.favorites} />
             </Switch>
             </Router>
-            <div className="container">
-            
+            <div className="headwrap">
+            <h1 style={{textAlign:"center"}}>This app is designed with the music enthusiast in mind.</h1>
+            <h5 style={{textAlign:"center"}}>Search any song below and find the music video and tablature side by side for all your favorite songs!</h5>
+            <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!</h5>
+            <h5 style={{textAlign:"center"}}>OR</h5>
+            <h5 style={{textAlign:"center"}}>Make a custom playlist!</h5>
+           </div>
+            <div className="ui container">
+                <Searchbar onFormSubmit={this.onFormSubmit}/>
+                <div className="ui two column stackable grid">
+                    <div className="ten wide column">
+                        <VideoDetail video={this.state.selectedVideo} />
+                    </div>
+                    <div className="six wide column">
+                        <VideoList
+                        onVideoSelect={this.onVideoSelect}
+                        videos={this.state.video}
+                        />
+                    </div>
+                </div>
             </div>
+            
             </div>
         );
     }

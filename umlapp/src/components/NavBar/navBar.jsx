@@ -5,13 +5,13 @@ import './navBar.css'
 function NavBar() {
     return (
         <div className="sidenav">
-            <Link to='/' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
+            <Link to={'/'} style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
             <p>Home</p>
             </Link>
-            <Link to='/users/1/favorites' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
+            <Link to={'/favorites'} style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
             <p>My Favorites</p>
             </Link>
-            <Link to='/playlists' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
+            <Link to={'/playlists'} style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
             <p>Saved Playlists</p>
             </Link>
             <ul>
