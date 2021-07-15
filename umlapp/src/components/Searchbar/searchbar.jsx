@@ -14,9 +14,9 @@ class SearchBar extends Component {
         return ( 
             <div className='search-bar ui segment'>
                 <form onSubmit={this.handleSubmit} className='ui form'>
-                    <div className="field">
-                        <label htmlFor="song-search">Song Search</label>
-                        <input onChange={this.handleChange} name="song-search" type="text" placeholder="Search any song..."/>
+                    <div className='field'>
+                        <label htmlFor="song-search"></label>
+                        <input onChange={this.handleChange} name='song-search' type="text" placeholder="Search any song..."/>
                         <button type="submit">Submit</button>
                     </div>
                 </form>                
@@ -26,3 +26,5 @@ class SearchBar extends Component {
 }
  
 export default SearchBar;
+
+//checked

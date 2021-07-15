@@ -60,16 +60,16 @@ class App extends Component {
                     <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!</h5>
                     <h5 style={{textAlign:"center"}}>OR</h5>
                     <h5 style={{textAlign:"center"}}>Make a custom playlist!</h5>
-                    <div className="row">
-                        <div className="col-md-12">
+                    <div className='row'>
+                        <div className='col-md-12'>
                             <Searchbar handleFormSubmit={this.handleSubmit}/>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-6">
+                    <div className='row'>
+                        <div className='col-md-6'>
                             <VideoDetail video={this.state.selectedVideo}/>
                         </div>
-                        <div className="col-md-6">
+                        <div className='col-md-6'>
                             <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
                         </div>
                     </div>
@@ -80,3 +80,5 @@ class App extends Component {
 }
 
 export default App;
+
+//checked
