@@ -9,13 +9,14 @@ const VideoDetail = ({ video }) => {
     </div>;
   }
 
- 
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
   return (
     <div className=".bg-secondary">
       <div className="ui segment">
-        <h4 className="ui header">{video.snippet.title}</h4>
+        <h4 className="ui header"> </h4>
       <div className="ui embed">
-        <iframe allowFullScreen title="Video player" />
+      <p>{video.snippet.title}</p>
+        <iframe src={videoSrc} allowFullScreen title="Video player" />
       </div>
         <p>{video.snippet.description}</p>
       </div>

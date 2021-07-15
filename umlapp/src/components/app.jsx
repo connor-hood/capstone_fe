@@ -26,27 +26,20 @@ class App extends Component {
             videos: [],
         }
     }
-    
-    componentDidMount(){
-        this.onFormSubmit('Configure passwordless sudo for user');
-    }
-
-    onFormSubmit = async (term) => {
-        const res = await youtube.get('/search',{
+    handleSubmit = async (term) => {
+        const response = await youtube.get('/search', {
             params: {
                 q: term
             }
         })
         this.setState({
-            video: res.data.items,
-            selectedVideo: res.data.items[0],
-        });
-    }
-
-    onVideoSelect = (video) => {
+            videos: response.data.items
+        })
+    };
+    handleVideoSelect = (video) => {
         this.setState({
             selectedVideo: video
-        });
+        })
     }
     render() {
         return (
@@ -61,28 +54,26 @@ class App extends Component {
                     favorites={this.state.favorites} />
             </Switch>
             </Router>
-            <div className="headwrap">
-            <h1 style={{textAlign:"center"}}>This app is designed with the music enthusiast in mind.</h1>
-            <h5 style={{textAlign:"center"}}>Search any song below and find the music video and tablature side by side for all your favorite songs!</h5>
-            <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!</h5>
-            <h5 style={{textAlign:"center"}}>OR</h5>
-            <h5 style={{textAlign:"center"}}>Make a custom playlist!</h5>
-           </div>
-            <div className="ui container">
-                <Searchbar onFormSubmit={this.onFormSubmit}/>
-                <div className="ui two column stackable grid">
-                    <div className="ten wide column">
-                        <VideoDetail video={this.state.selectedVideo} />
+                <div className="headwrap">
+                    <h1 style={{textAlign:"center"}}>This app is designed with the music enthusiast in mind.</h1>
+                    <h5 style={{textAlign:"center"}}>Search any song below and find the music video and tablature side by side for all your favorite songs!</h5>
+                    <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!</h5>
+                    <h5 style={{textAlign:"center"}}>OR</h5>
+                    <h5 style={{textAlign:"center"}}>Make a custom playlist!</h5>
+                    <div className="row">
+                        <div className="col-md-12">
+                            <Searchbar handleFormSubmit={this.handleSubmit}/>
+                        </div>
                     </div>
-                    <div className="six wide column">
-                        <VideoList
-                        onVideoSelect={this.onVideoSelect}
-                        videos={this.state.video}
-                        />
+                    <div className="row">
+                        <div className="col-md-6">
+                            <VideoDetail video={this.state.selectedVideo}/>
+                        </div>
+                        <div className="col-md-6">
+                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
+                </div>          
             </div>
         );
     }

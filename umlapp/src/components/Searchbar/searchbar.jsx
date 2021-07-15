@@ -1,6 +1,6 @@
 import React, {Component}from 'react';
 
-class Searchbar extends Component {
+class SearchBar extends Component {
     handleChange = (event) => {
         this.setState({
             term: event.target.value
@@ -10,22 +10,19 @@ class Searchbar extends Component {
         event.preventDefault();
         this.props.handleFormSubmit(this.state.term);
     }
-    render() {
-        return (
-            <>
+    render() { 
+        return ( 
             <div className='search-bar ui segment'>
                 <form onSubmit={this.handleSubmit} className='ui form'>
-                    <div className='field'>
-                        <label htmlFor="video-search"></label>
-                        <br />
-                        <input onChange={this.handleChange} name='video-search' type="text" placeholder="Search any song..."/>
-                        <button type="submit">Search</button>
+                    <div className="field">
+                        <label htmlFor="song-search">Song Search</label>
+                        <input onChange={this.handleChange} name="song-search" type="text" placeholder="Search any song..."/>
+                        <button type="submit">Submit</button>
                     </div>
-                </form>
+                </form>                
             </div>
-            </>
-        )
+         );
     }
 }
-
-export default Searchbar;
+ 
+export default SearchBar;
