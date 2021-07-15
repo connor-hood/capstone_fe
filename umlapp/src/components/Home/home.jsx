@@ -8,7 +8,9 @@ class Home extends Component {
     
     render() {
         return(
-           <div></div>
+           <div className="headwrap">
+               <h1>Hello</h1>
+           </div>
         )
     }
 }

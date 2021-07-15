@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import youtube from '../apis/youtube';
 import songsterr from '../apis/songsterr';
 import NavBar from './NavBar/navBar';
@@ -57,17 +57,18 @@ class App extends Component {
         return (
             <div>
             <h1>Ultimate Music Lover</h1>
-            
+            <Router>
             <NavBar />
             <Switch>
                 <Route path="/" component={Home} />
-                <Route path="/users/1/favorites" component={Favorites}/>
+                <Route exact path="/users/1/favorites" component={Favorites}/>
                     <Favorites
                     favorites={this.state.favorites} />
             </Switch>
-            <Searchbar />
+            </Router>
+            <div className="container">
             
-            
+            </div>
             </div>
         );
     }
