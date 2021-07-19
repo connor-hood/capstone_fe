@@ -5,11 +5,11 @@ const Tab = ({ video }) => {
   
   
 
-  const url = 'http://www.ultimate-guitar.com/'
+  const url = 'https://www.911tabs.com/'
 
   return (
     <div className="tab">
-      <iframe src={url} height="400" width="400" allowFullScreen title="tab_player" />
+      <iframe src={url} height="400" width="425" allowFullScreen title="tab_player" />
     </div>
   )
 }

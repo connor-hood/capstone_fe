@@ -7,7 +7,7 @@ const SongInfo = (props) => {
     return(
         <div>
             <div className="songInfo">
-                <h2>Title</h2>
+                <h2>Title:</h2>
                 <h2>Artist</h2>
             </div>
             <div className="playlib">
