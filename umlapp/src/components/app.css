@@ -4,7 +4,7 @@ body {
 }
 
 .container{
-    outline: 4px;
+    
     outline-color: black;
 }
 
@@ -28,18 +28,15 @@ div.five.wide.column {
   
   .ui_grid {
     padding-top: 1px;
-    
   }
   .ui_row {
     padding: 1px;
     position: relative;
-    
   }
   
   .ui_related {
     background-color: rgb(44, 147, 243);
     float: left;
-   
   }
   .col-md-12 {
     text-align: center;

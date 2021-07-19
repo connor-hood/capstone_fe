@@ -28,7 +28,7 @@ class SongInfo extends Component{
                         <span>
                             <h4>Video:</h4>
                             <div className="video">
-                            <VideoDetail />
+                            <VideoDetail video={this.props.song}/>
                             </div>
                         </span>
                         </div>

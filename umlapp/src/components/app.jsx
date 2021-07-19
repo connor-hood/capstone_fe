@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import youtube from '../apis/youtube';
 import songsterr from '../apis/songsterr';
 import NavBar from './NavBar/navBar';
@@ -73,7 +73,7 @@ class App extends Component {
                             <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
                         </div>
                         <div className='col-md-6'>
-                            <SongInfo />
+                            <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
                         </div>
                     </div>
                 </div>          

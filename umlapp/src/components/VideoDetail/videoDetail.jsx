@@ -4,7 +4,7 @@ const VideoDetail = ({ video }) => {
   if (!video) {
     return <div>
        
-       <h3>Video viewer</h3>
+      <h3>Video viewer</h3>
        
     </div>;
   }
