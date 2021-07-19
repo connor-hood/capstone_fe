@@ -1,31 +1,15 @@
-import React, { Component } from 'react';
-import songsterr from '../../apis/songsterr';
+import React from 'react';
+import useTab from '../useTab';
 
+const Tab = () => {
+  const {tab, setTab} = useTab;
 
-class Tab extends Component {
-    
-    componentDidMount() {
-        console.log("hello from tab")    
-    }
-    handleSubmit = async (termFromSearch) => {
-        let response = await songsterr.get({
-            params: {
-                s: termFromSearch
-            }
-        })
-        console.log(response.data)
-        this.setState = ({
-            selectedSong: response.data
-        })
-    }
-    render() { 
-        return (
-            <div>
-                <h3>Tab viewer</h3>
-                
-            </div>
-         );
-    }
+  return (
+    <div className="tab">
+      <h1>Tab viewer</h1>
+      
+    </div>
+  )
 }
- 
-export default Tab;
+
+export default Tab

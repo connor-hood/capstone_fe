@@ -27,13 +27,14 @@ class App extends Component {
         }
     }
     handleSubmit = async (term) => {
-        const response = await youtube.get('/search', {
+        const ytresponse = await youtube.get('/search', {
             params: {
                 q: term
             }
         })
+        
         this.setState({
-            videos: response.data.items
+            videos: ytresponse.data.items
         })
     };
     handleVideoSelect = (video) => {
@@ -41,6 +42,8 @@ class App extends Component {
             selectedVideo: video
         })
     }
+    
+
     render() {
         return (
             <div>
@@ -67,10 +70,10 @@ class App extends Component {
                     </div>
                     <div className='row'>
                         <div className='col-md-6'>
-                            <VideoDetail video={this.state.selectedVideo}/>
+                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
                         </div>
                         <div className='col-md-6'>
-                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                            <SongInfo />
                         </div>
                     </div>
                 </div>          

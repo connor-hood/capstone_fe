@@ -18,9 +18,6 @@ const VideoDetail = ({ video }) => {
       <p>{video.snippet.title}</p>
         <iframe src={videoSrc} allowFullScreen title="Video player" />
       </div>
-        <p>{video.snippet.description}</p>
-      </div>
-      <div className="comments">
       </div>
     </div>
   );
