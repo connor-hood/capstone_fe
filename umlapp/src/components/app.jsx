@@ -10,7 +10,6 @@ import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
 import SongInfo from './SongInfo/songInfo';
 import Searchbar from './Searchbar/searchbar';
-
 import './app.css';
 import VideoDetail from './VideoDetail/videoDetail';
 import VideoList from './VideoList/videoList';

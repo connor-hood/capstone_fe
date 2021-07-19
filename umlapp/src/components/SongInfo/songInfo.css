@@ -14,8 +14,7 @@
 }
 
 .tab{
-    border: 2px;
-    border-style: double;
+    width: 400px;
 }
 
 .playlib{

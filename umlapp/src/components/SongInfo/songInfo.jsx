@@ -30,7 +30,7 @@ const SongInfo = (props) => {
                         <span >
                             <h4>Tab:</h4>
                             <div className="tab">
-                            <Tab />
+                            <Tab tab={props.tab}/>
                             </div>
                         </span>
                         </div>
