@@ -24,6 +24,7 @@ class App extends Component {
             favorites: [],
             playlist: [],
             videos: [],
+            rating: 0,
         }
     }
     handleSubmit = async (term) => {

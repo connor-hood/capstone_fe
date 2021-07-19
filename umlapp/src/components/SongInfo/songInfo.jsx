@@ -1,15 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import VideoDetail from '../VideoDetail/videoDetail';
 import Tab from '../Tab/tab';
 import './songInfo.css'
 
-
-class SongInfo extends Component{
-    state = {
-        rating: 0,
-    }
-
-    render() {
+const SongInfo = (props) => {
     return(
         <div>
             <div className="songInfo">
@@ -28,7 +22,7 @@ class SongInfo extends Component{
                         <span>
                             <h4>Video:</h4>
                             <div className="video">
-                            <VideoDetail video={this.props.song}/>
+                            <VideoDetail video={props.video}/>
                             </div>
                         </span>
                         </div>
@@ -46,6 +40,6 @@ class SongInfo extends Component{
             </div>
         </div>
     )
-}
+
 }
 export default SongInfo;
