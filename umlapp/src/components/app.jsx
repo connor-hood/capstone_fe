@@ -11,7 +11,6 @@ import NewPlaylist from './NewPlaylist/newPlaylist';
 import SongInfo from './SongInfo/songInfo';
 import Searchbar from './Searchbar/searchbar';
 import './app.css';
-import VideoDetail from './VideoDetail/videoDetail';
 import VideoList from './VideoList/videoList';
 
 class App extends Component {
@@ -24,6 +23,7 @@ class App extends Component {
             playlist: [],
             videos: [],
             rating: 0,
+            
         }
     }
     handleSubmit = async (term) => {
@@ -43,7 +43,17 @@ class App extends Component {
         })
     }
     
-
+    filterSongsBySearch = (songs, query) => {
+        if(!query){
+            return songs;
+        }
+        let filteredSongs = songs.filter((song) => {
+            if(song.name.toLowerCase().includes(query.toLowerCase())){
+                return true;
+            }
+        })
+        return filteredSongs;
+    }
     render() {
         return (
             <div>
@@ -52,18 +62,23 @@ class App extends Component {
             <NavBar />
             <Switch>
                 <Route path="/"  />
-                <Route exact path="/favorites" component={Favorites}/>
+                <Route exact path="/library" component={Favorites}/>
                     <Favorites
                     favorites={this.state.favorites} />
+                <Route exact path="/playlist" component={Playlist}>
+                    <Playlist />
+                </Route>
             </Switch>
             </Router>
                 <div className="headwrap">
                     <h1 style={{textAlign:"center"}}>This app is designed with the music enthusiast in mind.</h1>
                     <h5 style={{textAlign:"center"}}>Search any song using Youtube's video lookup</h5>
                     <h5 style={{textAlign:"center"}}>Then check out 911 tabs to find the tabs for that song!</h5>
-                    <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!</h5>
+                    <br />
+                    <h5 style={{textAlign:"center"}}>Really like a song? Save it to your own favorites list!*</h5>
                     <h5 style={{textAlign:"center"}}>OR</h5>
-                    <h5 style={{textAlign:"center"}}>Make a custom playlist!</h5>
+                    <h5 style={{textAlign:"center"}}>Make a custom playlist!*</h5>
+                    <p style={{textAlign:"center"}}>(*Features coming soon)</p>
                     <div className='row'>
                         <div className='col-md-12'>
                             <Searchbar handleFormSubmit={this.handleSubmit}/>
@@ -76,6 +91,9 @@ class App extends Component {
                         <div className='col-md-6'>
                             <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
                         </div>
+                    </div>
+                    <div className='row'>
+                        <Library />
                     </div>
                 </div>          
             </div>

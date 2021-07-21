@@ -1,62 +1,35 @@
 import axios from 'axios';
-import React, { Component } from 'react';
-import * as ReactBootstrap from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import '../app.css'
+import Datatable from '../Datatable/datatable'
 
-class Playlist extends Component {
-    constructor(){
-        super();
-        this.state = {
-         songs:[]
-    }
-    }
-    componentDidMount(){
-        console.log("Hello from playlist")
-        //this.makeGetRequest();
-    };
+function Playlist() {
+    const [data, setData] = useState([])
+    const [q, setQ] = useState("")
 
-    /* async makeGetRequest() {
-        try{
-            let response = await axios.get('http://127.0.0.1:8000/songs/');
-            console.log(response.data)
-            this.setState({
-                songs: response.data
-            })
-        }
-        catch (ex) {
-            console.log('Error in call')
-        }
-    } */
-    render(){
+    useEffect(() => {
+        fetch(`http://127.0.0.1:8000/songs/`)
+        .then(response => response.json()
+        .then(json => setData(json))
+        )
+    }, [])
+
+    function search(rows) {
+        return rows.filter(row => 
+            row.title.toLowerCase().indexOf(q) > -1 ||
+            row.artist.toLowerCase().indexOf(q) > -1 ||
+            row.album.toLowerCase().indexOf(q) > -1)
+    }
+
     return (
         <div>
-            <h1>Hello from Playlist</h1>
-            <ReactBootstrap.Table striped bordered hover variant="dark">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Artist</th>
-                    <th>Album</th>
-                    <th>Rating</th>
-                </tr>
-            </thead>
-            <tbody>
-                    {this.state.songs.map(song => {
-                        return(
-                            <tr key={song.id}>
-                                <td>{song.id}</td>
-                                <td>{song.title}</td>
-                                <td>{song.artist}</td>
-                                <td>{song.album}</td>
-                                <td>{song.ranking}</td>
-                            </tr>
-                        )
-                    })}
-            </tbody>
-            </ReactBootstrap.Table>
+            <div>
+                <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find a song..."/>
+            </div>
+            <div><Datatable data={search(data)}/></div>
         </div>
-    )}
+    )
 }
 
-export default Playlist;
+export default Playlist

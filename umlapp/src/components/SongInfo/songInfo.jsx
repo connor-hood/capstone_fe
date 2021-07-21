@@ -5,16 +5,7 @@ import './songInfo.css'
 
 const SongInfo = (props) => {
     return(
-        <div>
-            <div className="songInfo">
-                <h2>Title:</h2>
-                <h2>Artist</h2>
-            </div>
-            <div className="playlib">
-                <p style={{float: 'left'}}>Add to Library</p>
-                <p stlye={{float: 'right'}}>Add to Playlist</p>
-            </div>
-            
+        <div>            
             <div className="vtwrapper">
                 <div className="container">
                     <div className="row">
