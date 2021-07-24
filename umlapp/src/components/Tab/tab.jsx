@@ -1,5 +1,4 @@
 import React from 'react';
-import useTab from '../useTab';
 
 const Tab = ({ video }) => {
   
