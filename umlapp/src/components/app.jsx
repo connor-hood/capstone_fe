@@ -57,10 +57,9 @@ class App extends Component {
         return (
             <div>
             <h1>Ultimate Music Lover</h1>
-            
             <NavBar />
-            <Switch>
-                <Route path="/" component={Home}>
+             <Switch>
+                {/* <Route path="/" component={Home}>
                     <Home
                     selectedVideo={this.state.selectedVideo}
                     handleVideoSelect={this.state.handleVideoSelect}
@@ -74,9 +73,11 @@ class App extends Component {
                     <Library />
                 <Route exact path="/playlist" component={Playlist}>
                     <Playlist />
+                </Route> */}
+                <Route exact path="/create" component={NewPlaylist}>
+                    <NewPlaylist />
                 </Route>
             </Switch>
-            
                 
             </div>
         );
@@ -85,4 +86,3 @@ class App extends Component {
 
 export default App;
 
-//checked

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navBar.css'
+import axios from 'axios';
 
 function NavBar() {
+
+    
+
     return (
         <div className="sidenav">
             <Link to={'/'} style={{textDecoration: 'inherit', color: '#FFFFFF'}}>
@@ -16,7 +20,7 @@ function NavBar() {
             </Link>
             <ul>
                 <li><Link to="/" style={{textDecoration: 'inherit', color: '#FFFFFF'}}>Highest Rated</Link></li>
-                <li><Link to="/" style={{textDecoration: 'inherit', color: '#FFFFFF'}}>Custom 1</Link></li>
+                
                 <li><Link to='/create' style={{textDecoration: 'inherit', color: '#FFFFFF'}}>Create a new one</Link></li>
             </ul>
 
