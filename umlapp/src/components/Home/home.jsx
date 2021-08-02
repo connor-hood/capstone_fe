@@ -4,7 +4,7 @@ import VideoList from '../VideoList/videoList';
 import SongInfo from '../SongInfo/songInfo';
 
 const Home = (props) => {
-    const handleFormSubmit = props.handleFormSubmit;
+    
     return (
         <div className="headwrap">
                     <h1 style={{textAlign:"center"}}>This app is designed with the music enthusiast in mind.</h1>
@@ -17,15 +17,15 @@ const Home = (props) => {
                     <p style={{textAlign:"center"}}>(*Features coming soon)</p>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <Searchbar handleFormSubmit={this.handleSubmit}/>
+                            <Searchbar handleFormSubmit={props.handleSubmit}/>
                         </div>
                     </div>
                     <div className='row'>
                         <div className='col-md-6'>
-                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                            <VideoList handleVideoSelect={props.handleVideoSelect} videos={props.videos}/>
                         </div>
                         <div className='col-md-6'>
-                            <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
+                            {/* <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/> */}
                         </div>
                     </div>
                     
