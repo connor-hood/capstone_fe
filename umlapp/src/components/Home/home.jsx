@@ -17,15 +17,15 @@ const Home = (props) => {
                     <p style={{textAlign:"center"}}>(*Features coming soon)</p>
                     <div className='row'>
                         <div className='col-md-12'>
-                            
+                            <Searchbar />
                         </div>
                     </div>
                     <div className='row'>
                         <div className='col-md-6'>
-                            
+                            <VideoList />
                         </div>
                         <div className='col-md-6'>
-                            
+                            <SongInfo />
                         </div>
                     </div>
                     <div className='row'>

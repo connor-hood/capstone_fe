@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import '../app.css'
 import Datatable from '../Datatable/datatable'
 
