@@ -17,20 +17,19 @@ const Home = (props) => {
                     <p style={{textAlign:"center"}}>(*Features coming soon)</p>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <Searchbar />
+                            <Searchbar handleFormSubmit={this.handleSubmit}/>
                         </div>
                     </div>
                     <div className='row'>
                         <div className='col-md-6'>
-                            <VideoList />
+                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
                         </div>
                         <div className='col-md-6'>
-                            <SongInfo />
+                            <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/>
                         </div>
                     </div>
-                    <div className='row'>
-                    </div>
-                </div>          
+                    
+                </div>                
     )
 }
 
