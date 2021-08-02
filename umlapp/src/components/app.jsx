@@ -1,17 +1,14 @@
+/* eslint-disable array-callback-return */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import youtube from '../apis/youtube';
-import songsterr from '../apis/songsterr';
 import NavBar from './NavBar/navBar';
 import Home from './Home/home';
 import Library from './Library/mylibrary';
 import Playlist from './Playlist/playlist';
 import Favorites from './Favorites/favorites';
 import NewPlaylist from './NewPlaylist/newPlaylist';
-import SongInfo from './SongInfo/songInfo';
-import Searchbar from './Searchbar/searchbar';
 import './app.css';
-import VideoList from './VideoList/videoList';
 
 class App extends Component {
     constructor(){
