@@ -66,9 +66,8 @@ class App extends Component {
                     handleSubmit={this.handleSubmit}
                     handleVideoSelect={this.handleVideoSelect}
                     videos={this.state.videos}
-                    video={this.state.selectedVideo}
-                    tab={this.state.selectedTab}
-                    handleFormSubmit={this.handleFormSubmit}
+                    selectedVideo={this.state.selectedVideo}
+                    selectedTab={this.state.selectedTab}
                      />
                 </Route>
                 <Route exact path="/favorites" component={Favorites}/>

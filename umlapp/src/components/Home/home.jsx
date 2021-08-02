@@ -25,7 +25,7 @@ const Home = (props) => {
                             <VideoList handleVideoSelect={props.handleVideoSelect} videos={props.videos}/>
                         </div>
                         <div className='col-md-6'>
-                            {/* <SongInfo video={this.state.selectedVideo} tab={this.state.selectedTab}/> */}
+                             <SongInfo video={props.selectedVideo} tab={props.selectedTab}/>
                         </div>
                     </div>
                     
