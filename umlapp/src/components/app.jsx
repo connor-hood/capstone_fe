@@ -59,7 +59,7 @@ class App extends Component {
             <h1>Ultimate Music Lover</h1>
             <NavBar />
              <Switch>
-                {/* <Route path="/" component={Home}>
+                <Route exact path="/" component={Home}>
                     <Home
                     selectedVideo={this.state.selectedVideo}
                     handleVideoSelect={this.state.handleVideoSelect}
@@ -69,7 +69,7 @@ class App extends Component {
                     handleFormSubmit={this.handleFormSubmit}
                     />
                 </Route>
-                <Route exact path="/library" component={Library}/>
+                {/* <Route exact path="/library" component={Library}/>
                     <Library />
                 <Route exact path="/playlist" component={Playlist}>
                     <Playlist />

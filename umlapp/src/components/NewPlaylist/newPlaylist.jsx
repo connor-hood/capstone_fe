@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../app.css'
 
 
 class NewPlaylist extends Component {
@@ -36,7 +37,7 @@ class NewPlaylist extends Component {
 
     render() {
         return (
-            <div>
+            <div className="headwrap">
                 <form onSubmit={this.onSubmit}>
                     <h1>Playlist Name</h1>
                     <label for="name"></label>
