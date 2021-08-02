@@ -1,11 +1,13 @@
 import React from 'react';
 import Playlist from '../Playlist/playlist';
+import '../app.css'
 
-function Library() {
+function Library() { 
+
     return (
-        <div>
+        <div className="headwrap">
             <h3>My Library:</h3>
-            <Playlist />
+            
         </div>
     )
 }

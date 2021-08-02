@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import axios from 'axios';
 import youtube from '../apis/youtube';
 import songsterr from '../apis/songsterr';
 import NavBar from './NavBar/navBar';
@@ -13,6 +14,9 @@ import './app.css';
 import VideoList from './VideoList/videoList';
 import Home from './Home/home';
 
+const api = axios.create({
+    baseURL:'http://127.0.0.1:8000/'
+})
 class App extends Component {
     constructor(){
         super()
@@ -53,6 +57,12 @@ class App extends Component {
         })
         return filteredSongs;
     }
+    getSongsInLibrary = async () => {
+        const libres = await api.get('/').then('songs/')
+        this.setState({
+            playlist: libres
+        })
+    }
     render() {
         return (
             <div>
@@ -69,14 +79,12 @@ class App extends Component {
                     handleFormSubmit={this.handleFormSubmit}
                     />
                 </Route>
-                {/* <Route exact path="/library" component={Library}/>
-                    <Library />
-                <Route exact path="/playlist" component={Playlist}>
-                    <Playlist />
-                </Route> */}
+                 <Route exact path="/library" component={Library}/>
+                    <Library
+                    library={this.getSongsInLibrary} />
                 <Route exact path="/create" component={NewPlaylist}>
                     <NewPlaylist />
-                </Route>
+                </Route> 
             </Switch>
                 
             </div>
