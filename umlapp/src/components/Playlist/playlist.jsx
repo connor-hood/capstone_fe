@@ -9,25 +9,25 @@ function Playlist() {
     const [q, setQ] = useState("")
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/songs/`)
+        fetch(`http://127.0.0.1:8000/users/1/playlists/1/`)
         .then(response => response.json()
         .then(json => setData(json))
         )
     }, [])
 
-    function search(rows) {
+    /* function search(rows) {
         return rows.filter(row => 
             row.title.toLowerCase().indexOf(q) > -1 ||
             row.artist.toLowerCase().indexOf(q) > -1 ||
             row.album.toLowerCase().indexOf(q) > -1)
-    }
+    } */
 
     return (
         <div>
             <div>
                 <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find a song..."/>
             </div>
-            <div><Datatable data={search(data)}/></div>
+            <div><Datatable data={/* search( */data/* ) */}/></div>
         </div>
     )
 }
