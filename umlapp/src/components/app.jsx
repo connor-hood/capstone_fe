@@ -58,18 +58,18 @@ class App extends Component {
             <Router>
             <NavBar />
             <Switch>
-                <Route path="/" component={Home}>
-                    <Home
+               {/* <Route path="/" component={Home}>
+                     <Home
                     handleSubmit={this.handleSubmit}
                     handleVideoSelect={this.handleVideoSelect}
                     videos={this.state.videos}
                     selectedVideo={this.state.selectedVideo}
                     selectedTab={this.state.selectedTab}
-                     />
                 </Route>
                 <Route exact path="/favorites" component={Favorites}/>
                     <Favorites
                     favorites={this.state.favorites} />
+                     /> */}
                 <Route exact path="/playlist" component={Playlist}>
                     <Playlist />
                 </Route>
